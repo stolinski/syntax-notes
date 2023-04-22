@@ -5,7 +5,6 @@ import { error } from '@sveltejs/kit';
 
 export async function POST({ request }) {
 	const { room } = await request.json();
-	console.log('room', room);
 
 	if (!LIVEBLOCKS_SECRET || !room) {
 		throw error(403);
