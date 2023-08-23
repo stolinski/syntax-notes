@@ -5,6 +5,7 @@ url: https://traffic.libsyn.com/syntax/Syntax026.mp3
 date: 1514937600000
 ___
 
+
 ## Dev Lifts — Sponsor
 
 [Dev Lifts](http://devlifts.io) will create a personal training plan tailored to your 2018 health and fitness goals. Use the code **SYNTAX** for $50 off.
