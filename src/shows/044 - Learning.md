@@ -1,10 +1,3 @@
----
-number: 44
-title: How to Learn New Things Quickly
-date: 1525266395740
-url: https://traffic.libsyn.com/syntax/Syntax044.mp3
----
-
 Scott and Wes talk about how they learn new things quickly. Scott also tells a crazy story about his weekend.
 
 ## Netlify — Sponsor
@@ -20,7 +13,6 @@ Developers, software engineers, designers, and web performance professionals flo
 [Fluent](https://conferences.oreilly.com/fluent/fl-ca) covers a broad range of technologies and topics to provide web programming professionals with the skills, connections, and inspiration needed to build better online and mobile experiences.
 
 [Fluent](https://conferences.oreilly.com/fluent/fl-ca) is this June 11-14 in San Jose, CA. Save 20% today with code: **SYNTAX**
-
 
 ## Show Notes
 
@@ -75,16 +67,16 @@ Developers, software engineers, designers, and web performance professionals flo
 ## ××× SIIIIICK ××× PIIIICKS ×××
 
 * Wes:
+
   * [Crushing It Book](https://amzn.to/2FC4PIv)
   * [Crushing It AudioBook](https://amzn.to/2JL8ZQQ)
-* Scott: [Popmotion Pose](https://popmotion.io/pose/)
 
+* Scott: [Popmotion Pose](https://popmotion.io/pose/)
 
 ## Shameless Plugs
 
 * [Wes' JavaScript30 Course](https://javascript30.com/)
 * [Scott's Headless WordPress course](https://LevelUpTutorials.com/store)
-
 
 1:00:00
 
