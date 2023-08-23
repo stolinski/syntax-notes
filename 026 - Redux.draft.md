@@ -6,7 +6,7 @@ date: 1514937600000
 ---
 
 
-## Dev Lifts — Sponsor
+## POOP
 
 [Dev Lifts](http://devlifts.io) will create a personal training plan tailored to your 2018 health and fitness goals. Use the code **SYNTAX** for $50 off.
 
