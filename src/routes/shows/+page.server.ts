@@ -1,22 +1,13 @@
+import { get_repo_files } from '$lib/get_repo_files';
 import type { PageServerLoad } from './$types';
 
-export const load: PageServerLoad = async function ({ locals }) {};
+export const load: PageServerLoad = async function ({ locals, cookies }) {
+	const oauth_token = cookies.get('oauth');
+	if (oauth_token) {
+		const files = await get_repo_files(oauth_token);
 
-async function getRepoFiles(owner, repo, path = '') {
-	const token = 'your_personal_access_token'; // Replace with your personal access token
-	const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
-
-	const response = await fetch(url, {
-		headers: {
-			Authorization: `token ${token}`,
-			Accept: 'application/vnd.github+json'
-		}
-	});
-
-	if (!response.ok) {
-		throw new Error(`Error fetching repository content: ${response.status}`);
+		return {
+			files
+		};
 	}
-
-	const data = await response.json();
-	return data;
-}
+};

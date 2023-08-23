@@ -5,9 +5,7 @@ const userURL = 'https://api.github.com/user';
 
 export const oauth: Handle = async function ({ event, resolve }) {
 	const oauth: string = event.cookies.get('oauth');
-	console.log('oauth', oauth);
 	const user = await getUser(oauth);
-	console.log('user', user);
 
 	event.locals.user = user;
 	const response = await resolve(event);

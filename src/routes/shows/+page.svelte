@@ -1,12 +1,32 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-
 	export let data: PageData;
-	$: ({ user } = data);
-	$: console.log('user', user);
+	$: ({ user, files } = data);
 </script>
 
 {#if user}
-	<h1>Logged in as: {user.login}</h1>
-	<img src={user.avatar_url} alt="Github Avatar" />
+	{#if files}
+		<ul>
+			{#each files as file}
+				<li>
+					<a href={`/shows/${file.name}`}>
+						{#if file.name.includes('draft')}
+							<span> DRAFT </span>
+						{/if}
+						{file.name}
+					</a>
+				</li>
+			{/each}
+		</ul>
+	{/if}
 {/if}
+
+<style>
+	span {
+		background: var(--color-background-preview-dark);
+		color: var(--color-foreground-primary-dark);
+		display: inline-block;
+		border-radius: 5px;
+		padding: 2px 5px;
+	}
+</style>

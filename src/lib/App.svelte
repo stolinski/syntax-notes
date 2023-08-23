@@ -3,7 +3,7 @@
 	import { type Room, type LiveList } from '@liveblocks/client';
 	import { onDestroy, onMount } from 'svelte';
 	import Block from '$lib/blocks/Block.svelte';
-	export let room;
+	export let room: Room;
 
 	let doc: LiveList<string>;
 	let doc_display: string[];
@@ -17,7 +17,6 @@
 	const unsubscribeOthers = room.subscribe('others', (others) => {
 		users = others;
 		is_typing = others.toArray().find((user) => user.presence?.isTyping);
-		console.log('is_typing', is_typing);
 	});
 
 	const unsubscribeConnection = room.subscribe('connection', () => {
@@ -43,11 +42,6 @@
 	});
 
 	$: hasMoreUsers = users ? [...users].length > 3 : false;
-
-	function on_input(e: Event & { currentTarget: HTMLDivElement }, i: number) {
-		room.updatePresence({ isTyping: true, on_line: i });
-		doc.set(i, e.currentTarget.innerText);
-	}
 </script>
 
 <header>
@@ -72,7 +66,7 @@
 	<section>
 		{#if doc}
 			{#each doc_display as text, i}
-				<Block line_number={String(i)} {on_input} {text} {room} {is_typing} />
+				<Block {doc} line_number={String(i)} {text} {room} {is_typing} />
 			{/each}
 		{/if}
 	</section>
@@ -108,8 +102,10 @@
 
 	main {
 		background: var(--color-background);
-		padding: 20px;
-		height: 80vh;
+		padding: 10px 10px 100px;
+		min-height: 80vh;
 		margin: 5px;
+		box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1), 0px 0px 0px 1px rgba(0, 0, 0, 0.05);
+		border-radius: 4px;
 	}
 </style>

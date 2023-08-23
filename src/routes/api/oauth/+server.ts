@@ -4,9 +4,7 @@ const tokenURL = 'https://github.com/login/oauth/access_token';
 
 export async function GET({ url, cookies }) {
 	const code = url.searchParams.get('code');
-	console.log('code', code);
 	const accessToken = await getAccessToken(code);
-	console.log('accessToken', accessToken);
 	cookies.set('oauth', accessToken, {
 		httpOnly: true,
 		path: '/'
@@ -32,8 +30,6 @@ function getAccessToken(code) {
 	})
 		.then((r) => r.json())
 		.then((r) => {
-			console.log('r', r);
-
 			return r.access_token;
 		});
 }
