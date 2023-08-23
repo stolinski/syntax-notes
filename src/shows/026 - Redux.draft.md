@@ -1,10 +1,10 @@
 ---
-number: '26'
+number: 26
 title: All About Redux && Cookies vs JWT
 url: https://traffic.libsyn.com/syntax/Syntax026.mp3
 date: 1514937600000
----
 
+___
 
 ## Dev Lifts — Sponsor
 
