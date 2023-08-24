@@ -12,7 +12,7 @@ In this Hasty Treat, Scott and Wes talk all things oAuth - what is oAuth? What t
 
 * [**00:26**](#t=00:26) Welcome
 * [Office Space](https://en.wikipedia.org/wiki/Office_Space)
-* [HTTPS + Tunnel Your Localhost - Cloudflare Tunnels, Ngrok, and more! Ã¢ÂÂ Syntax Podcast 590](https://syntax.fm/show/590/https-tunnel-your-localhost-cloudflare-tunnels-ngrok-and-more)
+* [HTTPS + Tunnel Your Localhost - Cloudflare Tunnels, Ngrok, and more! ÃÂ¢ÃÂÃÂ Syntax Podcast 590](https://syntax.fm/show/590/https-tunnel-your-localhost-cloudflare-tunnels-ngrok-and-more)
 * [**01:56**](#t=01:56) What is oAuth?
 * [**05:30**](#t=05:30) Terminology in oAuth
 * [**07:52**](#t=07:52) Once you have a client ID
