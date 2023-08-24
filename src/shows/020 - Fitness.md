@@ -1,13 +1,14 @@
 ---
-number: 20
 title: Fitness, Nutrition, and Losing Weight
-date: 1511360754493
+number: 20
 url: https://traffic.libsyn.com/syntax/Syntax020.mp3
+date: 1511308800000
 ---
+
 
 Wes and Scott talk about their fitness journey and how it relates to being a web developer in terms of energy, focus and mental clarity.
 
-## Get Fit with Dev Lifts — Show Sponsor
+## Get Fit with Dev LiftsÂÂ Show Sponsor
 
 [Dev Lifts](https://devlifts.io) - Thad and JC are on a mission to make web developers healthy.
 
@@ -27,8 +28,8 @@ They are currently offering Personal Training and Nutrition Plans for $149 (Regu
 * [Starting Strength](https://startingstrength.com/)
 * 28:00 - All About [Dev Lifts](https://devlifts.io)
 * [Jeff Nippard Youtube](https://www.youtube.com/channel/UC68TLK0mAEzUyHx5x5k-S1Q)
-* 34:00 — Nutrition
-* 36:00 — Wes' Keto Nutrition Plan
+* 34:00 Ã¢ÂÂ Nutrition
+* 36:00 Ã¢ÂÂ Wes' Keto Nutrition Plan
 * [Dom D'Agostino Keto Interview](https://www.youtube.com/watch?v=keSoSyu9m7c)
 * [MyFitnessPal](https://www.myfitnesspal.com/)
 * [Keto Reddit](https://www.reddit.com/r/keto/)
@@ -38,7 +39,7 @@ They are currently offering Personal Training and Nutrition Plans for $149 (Regu
 * 45:45 - 16 : 8 Intermittent Fasting
 * [IF Reddit](https://www.reddit.com/r/intermittentfasting/)
 * 48:30 - Dieting is bad
-* Supplements — Don't take our Advice here. Talk to your trainer.
+* Supplements Ã¢ÂÂ Don't take our Advice here. Talk to your trainer.
 * 50:00 - Wes' Supplements and how Bags of Milk are the best
 * [BCAA Amino Energy](http://amzn.to/2hKkVqk)
 * [Preworkout Coke'd Up](http://amzn.to/2hIQ9hd)
@@ -46,17 +47,20 @@ They are currently offering Personal Training and Nutrition Plans for $149 (Regu
 * [Fish Oil](http://amzn.to/2iF54tT)
 * [Vita Jym Multivitamin](http://amzn.to/2zXYtnV)
 * 54:00 - Scott's Supplements
-* [NOW Adam Superior Men’s Multi](http://amzn.to/2zVtPvj)
+* [NOW Adam Superior MenÃ¢ÂÂs Multi](http://amzn.to/2zVtPvj)
 * [Optimum Nutrition Gold Standard 100% Whey Protein](http://amzn.to/2zX0IrM)
 * [NOW Psyllium Husk](http://amzn.to/2ze1xZy)
 * [BulkSupplements Pure L-Citrulline DL-Malate 2:1 Powder](http://amzn.to/2z96vqL)
 * [Bulksupplements Pure Caffeine Capsules. Caffeine can be dangerous warning!](http://amzn.to/2zW4GAJ)
 
 ## Sick Picks
+
 * Scott: [TriggerPoint GRID Foam Roller](http://amzn.to/2zbRAMi)
 * Wes: [Nike Techfleece Joggers](http://amzn.to/2jL2XYY)
 
 ## Tweet us your tasty treats!
+
 * [Wes Bos](https://twitter.com/wesbos)
 * [Scott Tolinski](https://twitter.com/stolinski)
 * Make sure to include [@SyntaxFM](https://twitter.com/SyntaxFM)
+
