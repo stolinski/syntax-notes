@@ -10,7 +10,7 @@ date: 1514937600000
 
 [Dev Lifts](http://devlifts.io) will create a personal training plan tailored to your 2018 health and fitness goals. Use the code **SYNTAX** for $50 off.
 
-Join with a friend and we'll make you aÃÂÃÂÃÂÃÂ Buddy PlanÃÂÃÂÃÂÃÂ that you can do together (nutrition will still be tailored on a per-individual basis, but workouts will be something you can both do together)! Plus, use the coupon code below and you'll both get $100 off.
+Join with a friend and we'll make you aÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Buddy PlanÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ that you can do together (nutrition will still be tailored on a per-individual basis, but workouts will be something you can both do together)! Plus, use the coupon code below and you'll both get $100 off.
 
 Enter each other's email address as the coupon code and your discount will be applied to your invoices (invoices are sent manually currently, so I'll apply the discount for you both once you've both signed up). Valid thru January 31, 2018.
 
