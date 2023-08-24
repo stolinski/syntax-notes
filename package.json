@@ -37,6 +37,7 @@
 		"@liveblocks/node": "^1.0.10",
 		"@melt-ui/svelte": "^0.38.0",
 		"@tiptap/core": "^2.0.4",
+		"@tiptap/extension-collaboration": "^2.1.7",
 		"@tiptap/extension-document": "^2.0.4",
 		"@tiptap/extension-link": "^2.1.0",
 		"@tiptap/extension-placeholder": "^2.0.4",

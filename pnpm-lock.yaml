@@ -16,6 +16,9 @@ dependencies:
   '@tiptap/core':
     specifier: ^2.0.4
     version: 2.0.4(@tiptap/pm@2.0.4)
+  '@tiptap/extension-collaboration':
+    specifier: ^2.1.7
+    version: 2.1.7(@tiptap/core@2.0.4)(@tiptap/pm@2.0.4)(y-prosemirror@1.0.20)
   '@tiptap/extension-document':
     specifier: ^2.0.4
     version: 2.0.4(@tiptap/core@2.0.4)
@@ -1173,6 +1176,18 @@ packages:
       '@tiptap/core': ^2.0.0
     dependencies:
       '@tiptap/core': 2.0.4(@tiptap/pm@2.0.4)
+    dev: false
+
+  /@tiptap/extension-collaboration@2.1.7(@tiptap/core@2.0.4)(@tiptap/pm@2.0.4)(y-prosemirror@1.0.20):
+    resolution: {integrity: sha512-ssOXjWY4hmWJAfA9lpwOW/FbG+CfoGCbQ5Q/2U/FZzsdLxnXmVyts4SG0BROepAA4SXM76WAylCfeqWfysXsfg==}
+    peerDependencies:
+      '@tiptap/core': ^2.0.0
+      '@tiptap/pm': ^2.0.0
+      y-prosemirror: 1.0.20
+    dependencies:
+      '@tiptap/core': 2.0.4(@tiptap/pm@2.0.4)
+      '@tiptap/pm': 2.0.4(@tiptap/core@2.0.4)
+      y-prosemirror: 1.0.20(prosemirror-model@1.19.3)(prosemirror-state@1.4.3)(prosemirror-view@1.31.7)(y-protocols@1.0.5)(yjs@13.6.7)
     dev: false
 
   /@tiptap/extension-document@2.0.4(@tiptap/core@2.0.4):
@@ -5812,6 +5827,23 @@ packages:
     resolution: {integrity: sha512-GCPAHLvrIH13+c0SuacwvRYj2SxJXQ4kaVTT5xgL3kPrz56XxkF21IGhjSE1+W0aw7gpBWRGXLCPnPby6lSpmQ==}
     engines: {node: '>=12'}
     dev: true
+
+  /y-prosemirror@1.0.20(prosemirror-model@1.19.3)(prosemirror-state@1.4.3)(prosemirror-view@1.31.7)(y-protocols@1.0.5)(yjs@13.6.7):
+    resolution: {integrity: sha512-LVMtu3qWo0emeYiP+0jgNcvZkqhzE/otOoro+87q0iVKxy/sMKuiJZnokfJdR4cn9qKx0Un5fIxXqbAlR2bFkA==}
+    peerDependencies:
+      prosemirror-model: ^1.7.1
+      prosemirror-state: ^1.2.3
+      prosemirror-view: ^1.9.10
+      y-protocols: ^1.0.1
+      yjs: ^13.3.2
+    dependencies:
+      lib0: 0.2.82
+      prosemirror-model: 1.19.3
+      prosemirror-state: 1.4.3
+      prosemirror-view: 1.31.7
+      y-protocols: 1.0.5
+      yjs: 13.6.7
+    dev: false
 
   /y-protocols@1.0.5:
     resolution: {integrity: sha512-Wil92b7cGk712lRHDqS4T90IczF6RkcvCwAD0A2OPg+adKmOe+nOiT/N2hvpQIWS3zfjmtL4CPaH5sIW1Hkm/A==}

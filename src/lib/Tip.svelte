@@ -3,20 +3,19 @@
 	import { Editor } from '@tiptap/core';
 	import StarterKit from '@tiptap/starter-kit';
 	import Link from '@tiptap/extension-link';
+	import { Collaboration } from '@tiptap/extension-collaboration';
 	import yaml from 'js-yaml';
-
+	import Y from 'yjs';
 	import { html_to_markdown } from './html_to_markdown';
 	import { applyAction, deserialize } from '$app/forms';
 	import { invalidateAll } from '$app/navigation';
 	import Controls from './Controls.svelte';
-	import type { Room } from '@liveblocks/client';
 	export let notes: string;
 	export let meta;
 	export let raw: string;
 	export let raw_notes: string;
 	export let url: string;
 	export let path: string;
-	export let room: Room;
 
 	let is_edited = false;
 	let element: Element;
@@ -49,12 +48,19 @@
 	}
 
 	onMount(() => {
+		const doc = new Y.Doc();
+
 		editor = new Editor({
 			element: element,
 			extensions: [
-				StarterKit.configure(),
+				StarterKit.configure({
+					history: false // important because history will now be handled by Y.js
+				}),
 				Link.configure({
 					openOnClick: false
+				}),
+				Collaboration.configure({
+					document: doc
 				})
 			],
 			content: notes,
@@ -62,11 +68,6 @@
 			onTransaction: async () => {
 				// force re-render so `editor.isActive` works as expected
 				editor = editor;
-				html_to_markdown(editor.getHTML()).then((data) => {
-					if (data !== raw_notes) {
-						is_edited = true;
-					}
-				});
 			}
 		});
 
