@@ -4,20 +4,24 @@
 	import StarterKit from '@tiptap/starter-kit';
 	import Link from '@tiptap/extension-link';
 	import { Collaboration } from '@tiptap/extension-collaboration';
+	import { TiptapCollabProvider } from '@hocuspocus/provider';
 	import yaml from 'js-yaml';
-	import Y from 'yjs';
+	import * as Y from 'yjs';
 	import { html_to_markdown } from './html_to_markdown';
 	import { applyAction, deserialize } from '$app/forms';
 	import { invalidateAll } from '$app/navigation';
 	import Controls from './Controls.svelte';
 	export let notes: string;
-	export let meta;
+	export let meta: {
+		number: number;
+		date: string;
+		title: string;
+		url: string;
+	};
 	export let raw: string;
 	export let raw_notes: string;
-	export let url: string;
 	export let path: string;
 
-	let is_edited = false;
 	let element: Element;
 	let editor: Editor;
 
@@ -29,9 +33,9 @@
 		return date.toISOString().substring(0, 10);
 	}
 
-	function getFormData(form) {
+	function getFormData(form: HTMLFormElement) {
 		const formData = {};
-		Array.from(form.elements).forEach((element) => {
+		Array.from(form.elements).forEach((element: HTMLInputElement) => {
 			if (element.name && element.type !== 'submit') {
 				if (element.type === 'date') {
 					// Convert the date value to an epoch timestamp
@@ -49,6 +53,13 @@
 
 	onMount(() => {
 		const doc = new Y.Doc();
+		const provider = new TiptapCollabProvider({
+			name: path, // any identifier - all connections sharing the same identifier will be synced
+			appId: 'q9g58ekg', // replace with YOUR_APP_ID
+			token:
+				'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2OTI5MDQyMDgsIm5iZiI6MTY5MjkwNDIwOCwiZXhwIjoxNjkyOTkwNjA4LCJpc3MiOiJodHRwczovL2NvbGxhYi50aXB0YXAuZGV2IiwiYXVkIjoic2NvdHRAc3ludGF4LmZtIn0.6DcDZdc5M-9K7_G6d3XzV3sAEmnWbh2ELOL7JQvMc2E', // replace with your JWT
+			document: doc
+		});
 
 		editor = new Editor({
 			element: element,
@@ -77,7 +88,7 @@
 			const selectedText = selection.toString();
 
 			if (selectedText) {
-				if (selection.rangeCount > 0) {
+				if (selection && selection.rangeCount > 0) {
 					var range = selection.getRangeAt(0);
 					var lineTop = range.getBoundingClientRect().top;
 					top_pos = lineTop;
