@@ -17,7 +17,6 @@
 	export let path: string;
 
 	let is_edited = false;
-
 	let element: Element;
 	let editor: Editor;
 
@@ -69,27 +68,22 @@
 			}
 		});
 
-		var targetedDiv = document.querySelector('.ProseMirror');
-		targetedDiv.addEventListener('click', function (event) {
-			if (event.target.tagName === 'A') {
-				event.preventDefault();
+		let targetedDiv = document.querySelector('.ProseMirror');
+
+		targetedDiv.addEventListener('selectionchange', function () {
+			const selection = window.getSelection();
+			const selectedText = selection.toString();
+
+			if (selectedText) {
+				if (selection.rangeCount > 0) {
+					var range = selection.getRangeAt(0);
+					var lineTop = range.getBoundingClientRect().top;
+					top_pos = lineTop;
+				}
+			} else {
+				console.log('Selection cleared');
 			}
 		});
-
-		targetedDiv.addEventListener('mouseup', handleSelectionChange);
-		targetedDiv.addEventListener('keyup', handleSelectionChange);
-		targetedDiv.addEventListener('click', handleSelectionChange);
-
-		function handleSelectionChange() {
-			// Get the position from the top of the browser window
-			var selection = window.getSelection();
-
-			if (selection.rangeCount > 0) {
-				var range = selection.getRangeAt(0);
-				var lineTop = range.getBoundingClientRect().top;
-				top_pos = lineTop;
-			}
-		}
 	});
 
 	onDestroy(() => {
@@ -114,7 +108,6 @@ ${markdown_to_server}
 
 	async function save_draft() {
 		const markdown_to_server_with_meta = await prepare_markdown();
-		console.log('markdown_to_server_with_meta', markdown_to_server_with_meta);
 		const r = await fetch('?/draft', {
 			method: 'POST',
 			body: JSON.stringify({ markdown_to_server: markdown_to_server_with_meta, url, path })
@@ -143,6 +136,8 @@ ${markdown_to_server}
 		if (result.type === 'success') {
 			// rerun all `load` functions, following the successful update
 			await invalidateAll();
+		} else {
+			console.error('Error publishing', result);
 		}
 
 		applyAction(result);

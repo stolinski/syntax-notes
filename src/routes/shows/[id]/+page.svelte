@@ -1,8 +1,6 @@
 <script lang="ts">
 	import Tip from '$lib/Tip.svelte';
-
 	export let data;
-
 	$: ({ meta, notes, raw, raw_notes, path } = data);
 </script>
 

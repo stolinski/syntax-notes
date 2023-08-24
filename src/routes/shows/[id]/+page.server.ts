@@ -1,5 +1,3 @@
-import { get_repo_file } from '$lib/get_repo_file';
-import { SHOW_REPO_URL } from '$lib/constants';
 import type { Actions, PageServerLoad } from './$types';
 import { unified } from 'unified';
 import remarkParse from 'remark-parse';
@@ -66,6 +64,19 @@ export const actions: Actions = {
 
 		const content = prepare_content(markdown_to_server);
 
+		const existingMainFileResponse = await fetch(
+			`https://api.github.com/repos/${owner}/${repo}/contents/src/shows/${mainPath}`,
+			{
+				headers: { Authorization: `token ${oauth_token}` }
+			}
+		);
+
+		let sha;
+		if (existingMainFileResponse.status === 200) {
+			const existingMainFile = await existingMainFileResponse.json();
+			sha = existingMainFile.sha; // Get the SHA of the main file
+		}
+
 		// Update or create the main file (without .draft.md)
 		const createOrUpdateMainFileResponse = await fetch(
 			`https://api.github.com/repos/${owner}/${repo}/contents/src/shows/${mainPath}`,
@@ -75,7 +86,8 @@ export const actions: Actions = {
 				body: JSON.stringify({
 					message: `Update ${mainPath}`,
 					content,
-					branch: baseBranch
+					branch: baseBranch,
+					sha: sha // Include the SHA if updating
 				})
 			}
 		);
@@ -97,6 +109,7 @@ export const actions: Actions = {
 			);
 			if (existingDraftFileResponse.status === 200) {
 				const existingDraftFile = await existingDraftFileResponse.json();
+				console.log('existingDraftFile', existingDraftFile);
 				const sha = existingDraftFile.sha; // Get the SHA of the draft file
 
 				// Delete the draft file
