@@ -14,6 +14,8 @@
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.1.0",
 		"@sveltejs/kit": "^1.18.0",
+		"@types/js-yaml": "^4.0.5",
+		"@types/node": "^20.5.4",
 		"@typescript-eslint/eslint-plugin": "^5.59.7",
 		"@typescript-eslint/parser": "^5.59.7",
 		"eslint": "^8.41.0",
@@ -32,6 +34,7 @@
 	"dependencies": {
 		"@liveblocks/client": "^1.0.10",
 		"@liveblocks/node": "^1.0.10",
+		"@melt-ui/svelte": "^0.38.0",
 		"@tiptap/core": "^2.0.4",
 		"@tiptap/extension-document": "^2.0.4",
 		"@tiptap/extension-link": "^2.1.0",

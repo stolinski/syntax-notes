@@ -1,4 +1,4 @@
-export async function get_repo_file(fileUrl) {
+export async function get_repo_file(fileUrl: string) {
 	const response = await fetch(fileUrl);
 
 	if (!response.ok) {
