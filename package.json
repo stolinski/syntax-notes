@@ -32,6 +32,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@hocuspocus/provider": "^2.4.0",
 		"@liveblocks/client": "^1.0.10",
 		"@liveblocks/node": "^1.0.10",
 		"@melt-ui/svelte": "^0.38.0",
@@ -57,6 +58,7 @@
 		"toml": "^3.0.0",
 		"turndown": "^7.1.2",
 		"unified": "^11.0.0",
-		"yaml": "^2.3.1"
+		"yaml": "^2.3.1",
+		"yjs": "^13.6.7"
 	}
 }

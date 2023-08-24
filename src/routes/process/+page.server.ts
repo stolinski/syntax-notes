@@ -29,6 +29,9 @@ async function renameMarkdownFiles(oauth_token: string): Promise<void> {
 		const response = await fetch(directoryUrl, {
 			headers: { Authorization: `token ${oauth_token}` }
 		});
+		if (response.status < 200 || response.status >= 300) {
+			throw new Error('Not authorized');
+		}
 		const files: any[] = await response.json();
 
 		// Filter markdown files

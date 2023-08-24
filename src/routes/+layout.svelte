@@ -3,7 +3,6 @@
 </script>
 
 <header>
-	<h1>Syntax</h1>
 	<nav>
 		<a href="/shows">◀️ Shows</a>
 	</nav>
@@ -12,7 +11,7 @@
 <slot />
 
 <style>
-	h1 {
-		font-size: var(--font-size-base);
+	header {
+		padding: 20px;
 	}
 </style>

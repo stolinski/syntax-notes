@@ -66,7 +66,7 @@
 		left: 10px;
 		box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1), 0px 0px 0px 1px rgba(0, 0, 0, 0.05), var(--shadow-6);
 		border-radius: 4px;
-		transition: 0.3s ease top;
+		transition: 0.3s ease opacity;
 		display: flex;
 		overflow: hidden;
 	}

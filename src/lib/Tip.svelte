@@ -9,12 +9,14 @@
 	import { applyAction, deserialize } from '$app/forms';
 	import { invalidateAll } from '$app/navigation';
 	import Controls from './Controls.svelte';
+	import type { Room } from '@liveblocks/client';
 	export let notes: string;
 	export let meta;
 	export let raw: string;
 	export let raw_notes: string;
 	export let url: string;
 	export let path: string;
+	export let room: Room;
 
 	let is_edited = false;
 	let element: Element;
@@ -69,8 +71,7 @@
 		});
 
 		let targetedDiv = document.querySelector('.ProseMirror');
-
-		targetedDiv.addEventListener('selectionchange', function () {
+		document.addEventListener('selectionchange', function () {
 			const selection = window.getSelection();
 			const selectedText = selection.toString();
 
@@ -81,7 +82,7 @@
 					top_pos = lineTop;
 				}
 			} else {
-				console.log('Selection cleared');
+				top_pos = 0;
 			}
 		});
 	});
@@ -152,7 +153,7 @@ ${markdown_to_server}
 </div>
 
 <form id="meta">
-	<input name="title" bind:value={meta.title} />
+	<input name="title" class="h1" bind:value={meta.title} />
 	<label for="">
 		Show #:
 		<input type="number" name="number" value={episode_number} id="" />
@@ -174,9 +175,21 @@ ${markdown_to_server}
 		border-radius: 4px;
 	}
 
+	#meta {
+		padding: 20px;
+	}
+
 	input[name='title'] {
 		width: 100%;
-		font-size: 24px;
 		font-weight: bold;
+		margin-bottom: 1rem;
+	}
+
+	.publish-bar {
+		padding: 20px 20px 0;
+	}
+
+	.notes {
+		margin: 0 20px;
 	}
 </style>
